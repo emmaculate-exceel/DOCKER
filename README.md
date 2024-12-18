@@ -13,6 +13,7 @@ Docker is an open-source platform tool designed to contain and automate deployme
 
 + Cross platform
 
++ Volumes (for consistency of data)
 #### Portability
 
 + Docker container built on one machine can run across multiple machines or platform
