@@ -1,5 +1,5 @@
 # Use the official Node.js image from the Docker Hub
-FROM node:16-slim
+FROM ubuntu:latest
 
 # Set the working directory in the container
 WORKDIR /app
@@ -11,7 +11,7 @@ WORKDIR /app
 # RUN npm install
 
 # Expose the port (8080) that the server will listen on
-EXPOSE 8080 8000
+EXPOSE 8080 3000
 
 # Run the server script when the container starts
 # CMD ["node", "server.js"]
