@@ -11,7 +11,7 @@ WORKDIR /app
 # RUN npm install
 
 # Expose the port (8080) on my local computer for my react application in my container that the server will listen on
-EXPOSE 8080 3000
+EXPOSE 8000 3000
 
 # Run the server script when the container starts
 # CMD ["node", "server.js"]
