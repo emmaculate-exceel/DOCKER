@@ -66,3 +66,25 @@ STOPSIGNAL	Specify the system call signal for exiting a container.
 USER		Set user and group ID.
 VOLUME		Create volume mounts.
 WORKDIR		Change working directory.
+
+
+
+### docker installation manual
+#### Note this is for Linux distros or should i say linux users alone
+
+* i'll suggest you start from here
+
+sudo apt-get install ca-certificates
+sudo apt-get install lsb-release
+
+sudo mkdir -p /etc/apt/keyrings
+
+curl -fsSL https://download.docker.com/linux/<linux OS>/gpg | sudo gpg --deamor -o /etc/apt/keyrings/docker.gpg
+
+echo "deb [arch=$(dpkg --print-architecture)
+signed-by=/etc/apt/keyrings/docker.gpg]
+https://download.docker.com/linux/<linux OS> $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
