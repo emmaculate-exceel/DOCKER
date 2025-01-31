@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  c:
+    image:
+      context: ./c
+        dockerfile: Dockerfile
+  rust:
+    image:
+      context: ./rust
+        dockerfile: Dockerfile
+  ruby:
+    image:
+      context: ./ruby
+        dockerfile: Dockerfile
+  c++:
+    image:
+      context: ./c++
+        dockerfile: Dockerfile
+  java:
+    image:
+      context: ./java
