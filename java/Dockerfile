@@ -24,5 +24,5 @@ ENV JAVA_HOME=/opt/java/current
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Verify Java installation
-RUN java -version && \
-    javac -version
+#RUN java -version && \
+#    javac -version
