@@ -1,0 +1,32 @@
+# ======== STAGE 1: Builder ========
+FROM ubuntu:20.04
+
+# Install build dependencies
+RUN apt-get update && \
+    apt-get install -y curl build-essential ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Rust
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Create app directory and copy project files
+WORKDIR /root
+#COPY . .
+
+# Build the Rust app in release mode
+#RUN cargo build --release
+
+# ======== STAGE 2: Runtime ========
+#FROM debian:bullseye-slim
+
+## Install runtime dependencies (if needed)
+#RUN apt-get update && \
+#    apt-get install -y ca-certificates && \
+#    rm -rf /var/lib/apt/lists/*
+
+# Copy the compiled binary from the builder stage
+#COPY --from=builder /app/target/release/myapp /usr/local/bin/myapp
+
+# Run the app
+#CMD ["myapp"]
