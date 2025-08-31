@@ -8,7 +8,8 @@ WORKDIR /home
 # COPY server.js /app/
 
 # Install any dependencies (if you have any, here we don’t need extra ones)
-# RUN npm install
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y openssh-client 
 
 # Expose the port (8080) on my local computer for my react application in my container that the server will listen on
 EXPOSE 8080 80
