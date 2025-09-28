@@ -1,6 +1,5 @@
 # Understanding Docker and it's uses and use cases.
 
-
 Docker is an open-source platform tool designed to contain and automate deployment, scaling and managing of applications using containerization which are lightweight containers that are portable and self sufficent enough with the inclusion with almost everything neccessary to run a piece of code or programme like code , libraries and dependencies .
 
 ## Features of Docker are :
