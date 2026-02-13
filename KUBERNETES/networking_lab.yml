@@ -1,0 +1,30 @@
+services:
+  # The Client (A basic Ubuntu machine)
+  client:
+    image: nicolaka/netshoot
+    container_name: network_client
+    networks:
+      - learning_net
+    command: sleep infinity
+
+  # The Server (A simple web server)
+  server:
+    image: nginxdemos/hello
+    container_name: network_server
+    networks:
+      - learning_net
+
+  # The Monitor (Equipped with Wireshark-like tools)
+  monitor:
+    image: nicolaka/netshoot
+    container_name: network_monitor
+    networks:
+      - learning_net
+    command: sleep infinity
+
+networks:
+  learning_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/24 # This defines our private "internet" range
